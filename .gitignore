@@ -5,6 +5,9 @@ __pycache__/
 # C extensions
 *.so
 
+# XML files
+*.xml
+
 # Distribution / packaging
 .Python
 env/
@@ -55,3 +58,6 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# PyCharm
+.idea/
