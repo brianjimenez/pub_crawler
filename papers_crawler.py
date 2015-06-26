@@ -36,7 +36,8 @@ def fetch_article_details(id_list):
 
 class Article(object):
     """Represents an article"""
-    def __init__(self, title='', authors=None, published='', abstract='', journal='', iso_journal='', doi=''):
+    def __init__(self, pmid='', title='', authors=None, published='', abstract='', journal='', iso_journal='', doi=''):
+        self.pmid = pmid
         self.title = title
         if authors:
             self.authors = authors
@@ -49,7 +50,7 @@ class Article(object):
         self.doi = doi
 
     def __str__(self):
-        return '<title="%s", authors="%s", journal="%s", doi="%s">' % (self.title, self.authors, self.journal, self.doi)
+        return '<pmid="%s", title="%s", authors="%s", journal="%s", doi="%s">' % (self.pmid, self.title, self.authors, self.journal, self.doi)
 
 
 def parse_articles(xml_file_name):
@@ -64,6 +65,7 @@ def parse_articles(xml_file_name):
         try:
             article = Article()
             for citation in pubmed_article.findall('MedlineCitation'):
+                article.pmid = citation.find('PMID').text
                 medline_article = citation.find('Article')
                 article.title = medline_article.find('ArticleTitle').text
                 journal = medline_article.find('Journal')

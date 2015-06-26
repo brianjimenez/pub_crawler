@@ -12,4 +12,4 @@ Parse and show the articles from the XML files:
 
 ## Dependencies
 - ElementTree
-- BioPython (there is a bug in many biopython packaged versions at the time of parsing the XML file, that is the reason the read functio is not used)
+- BioPython (there is a bug in many biopython packaged versions at the time of parsing the XML file, that is the reason the read function is not used)
