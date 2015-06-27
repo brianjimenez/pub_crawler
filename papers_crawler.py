@@ -9,7 +9,7 @@ import sys
 
 
 # Needed in order to let Pubmed to notify you instead of blocking your IP
-crawler_contact = 'brian.jimenez@bsc.es'
+crawler_contact = 'your_email@here'
 
 
 def search(query):
